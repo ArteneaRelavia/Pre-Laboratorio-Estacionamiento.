@@ -1,0 +1,35 @@
+var [][]int estacionamiento = {
+    {0, 1, 0, 1}, // fila 0
+    {1, 0, 0, 0}, // fila 1
+    {0, 0, 1, 1}, // fila 2
+    {1, 1, 0, 0}, // fila 3
+    {0, 1, 1, 0} // fila 4
+};
+
+var int fila;
+var int columna;
+var int filas;
+var int columnas;
+
+read(fila);
+read(columna);
+
+filas = tam(estacionamiento);
+columnas = tam(estacionamiento[0]);
+
+// Validación 1: fila fuera de rango
+if (fila < 0 OR fila >= filas) {
+    print(-1);
+} 
+// Validación 2: columna fuera de rango
+else if (columna < 0 OR columna >= columnas) {
+    print(-1);
+} 
+// Ambas coordenadas válidas → verificar estado del puesto
+else {
+    if (estacionamiento[fila][columna] == 0) {
+        print(0); // Éxito: puesto libre
+    } else {
+        print(1); // Puesto ocupado
+    }
+}
